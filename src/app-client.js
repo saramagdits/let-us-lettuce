@@ -1,3 +1,10 @@
+// Needs to:
+// Get date
+// Get produce
+// Get recipes
+// Display recipes
+// init()
+
 // Import modules
 import {Date} from './date.js';
 import {Produce} from './produce.js';
@@ -17,3 +24,9 @@ console.log(date.print);
 console.log(produce.print);
 console.log(recipe.print);
 console.log(ui.print);
+
+// API test request
+fetch('http://localhost:3000/test')
+// .json() returns a promise, so you need another .then()
+		.then(res => res.json().then(data => {console.log(data)}))
+		.catch(err => console.log(err));
