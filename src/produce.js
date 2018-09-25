@@ -1,7 +1,8 @@
 class Produce {
-	constructor () {
+	constructor() {
 		this.print = 'Hello from the produce class'
 	}
+
 	// Receive current month
 	// Request relevant produce from Produce API
 	// Receive current produce

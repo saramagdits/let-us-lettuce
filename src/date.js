@@ -1,9 +1,11 @@
 // Date should be a class
 class Date {
-	constructor (){
+	constructor() {
 		this.print = 'hello from date class';
 	}
+
 	// Determine current month
 
 }
+
 export {Date};

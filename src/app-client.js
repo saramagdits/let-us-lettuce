@@ -28,5 +28,7 @@ console.log(ui.print);
 // API test request
 fetch('http://localhost:3000/test')
 // .json() returns a promise, so you need another .then()
-		.then(res => res.json().then(data => {console.log(data)}))
+		.then(res => res.json().then(data => {
+			console.log(data)
+		}))
 		.catch(err => console.log(err));
