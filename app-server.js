@@ -6,15 +6,26 @@
 // Requirements
 // =======================
 const express = require('express');
+const config = require('./config.js');
 const app = express();
-const port = 3000;
-
+// const port = 3000;
+const port = config.port;
+const mongoose = require('mongoose');
 // =======================
 // Configuration
 // =======================
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+// =======================
+// Database Connection
+// =======================
+mongoose.connect('mongodb://localhost/test_database');
+// test adding cat to db
+const Cat = mongoose.model('Cat', { name: String });
+
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => console.log('meow'));
 // =======================
 // Routes
 // =======================
