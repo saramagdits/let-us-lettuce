@@ -3,6 +3,7 @@
 // Get produce
 // Get recipes
 // Display recipes
+// Have dietary restriction modifiers (checkbox: vegetarian?)
 // init()
 
 // Import modules
