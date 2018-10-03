@@ -11,6 +11,7 @@ const app = express();
 // const port = 3000;
 const port = config.port;
 const mongoose = require('mongoose');
+const Produce = require('./modules/produce');
 // =======================
 // Configuration
 // =======================
@@ -38,6 +39,12 @@ const test = require('./routes/test.js');
 app.use('/', index);
 // Test a request from the client
 app.use('/test', test);
+
+// =======================
+// Populate Database
+// =======================
+// const produce = new Produce;
+// produce.populateDB();
 
 // =======================
 // Listener for port 3000
