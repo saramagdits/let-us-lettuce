@@ -32,17 +32,21 @@ kitty.save().then(() => console.log('meow'));
 // =======================
 
 // Import routes
-const index = require('./routes/index.js');
-const test = require('./routes/test.js');
+const index = require('./routes/index');
+const test = require('./routes/test');
+const recipes = require('./routes/recipes');
 
 // Homepage
 app.use('/', index);
 // Test a request from the client
 app.use('/test', test);
+// Make a request to Recipe Puppy
+app.use('/recipes', recipes);
 
 // =======================
 // Populate Database
 // =======================
+// Uncomment and run once when needed
 // const produce = new Produce;
 // produce.populateDB();
 
