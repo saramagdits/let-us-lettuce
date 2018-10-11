@@ -74,6 +74,9 @@ class Produce {
 			console.log(err)
 		});
 	};
+	getProduce() {
+
+	}
 }
 
 module.exports = Produce;
