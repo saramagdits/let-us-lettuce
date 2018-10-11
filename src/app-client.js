@@ -37,9 +37,8 @@ fetch('http://localhost:3000/test')
 
 // Recipe API test
 // Use as base for fetching recipes
-fetch('http://www.recipepuppy.com/api/?i=onions,garlic&p=3', {headers: {'Access-Control-Allow-Origin': '*'}})
-	.then(res => res.json())
-		.then(data => console.log(JSON.stringify(data)))
+fetch('http://localhost:3000/recipes?ing=onions,garlic&p=3')
+	.then(res => res.json().then(data => console.log(data)))
 	.catch(err => console.log(err));
 // fetch('http://www.recipepuppy.com/api/?i=onions,garlic&p=3')
 // 	.then(res => console.log(res))
