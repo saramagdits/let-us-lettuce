@@ -86,9 +86,9 @@ class Produce {
 	// 	return produceData;
 	// }
 	getProduce(month){
-		// this works, needs to be handled asynchronously by produce route
-		SeasonalProduce.find({month: month}, (err, docs) => {console.log(docs)});
-
+		// This works, needs to be handled asynchronously by produce route
+		// TODO add error handling
+		return SeasonalProduce.find({month: month}, (err, docs) => {return docs});
 	}
 }
 
