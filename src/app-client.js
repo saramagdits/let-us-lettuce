@@ -32,3 +32,10 @@ console.log(ui.print);
 fetch('http://localhost:3000/recipes?ing=onions,garlic&p=3')
 	.then(res => res.json().then(data => console.log(data)))
 	.catch(err => console.log(err));
+
+// Produce API test
+// Use as base for fetching produce
+fetch('http://localhost:3000/produce?month=october', {method: 'GET'})
+		.then(res => {return res.json()})
+		.then(data => console.log(data))
+		.catch(err => console.log(err));

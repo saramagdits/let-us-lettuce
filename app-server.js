@@ -29,11 +29,14 @@ mongoose.connect('mongodb://localhost/test_database');
 // Import routes
 const index = require('./routes/index');
 const recipes = require('./routes/recipes');
+const produce = require('./routes/produce');
 
 // Homepage
 app.use('/', index);
 // Make a request to Recipe Puppy
 app.use('/recipes', recipes);
+// Make a request for produce
+app.use('/produce', produce);
 
 // =======================
 // Populate Database
