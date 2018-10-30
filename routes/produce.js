@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 	const month = req.query.month;
 	// Get produce using produce model
 	// getProduce returns a promise
-	const produceData = produce.getProduce(month).then(results => {return res.send(results[0])});
+	produce.getProduce(month).then(results => {return res.send(results[0])});
 });
 
 module.exports = router;
