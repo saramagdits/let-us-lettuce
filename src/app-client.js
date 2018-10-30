@@ -26,12 +26,8 @@ console.log(produce.print);
 console.log(recipe.print);
 console.log(ui.print);
 
-
-// Recipe API test
-// Use as base for fetching recipes
-fetch('http://localhost:3000/recipes?ing=onions,garlic&p=3')
-	.then(res => res.json().then(data => console.log(data)))
-	.catch(err => console.log(err));
+// Make a request to Recipe Puppy API, which returns a promise
+recipe.getRecipes('eggplant, tomato').then(results => console.log(results));
 
 // Make a request to produce API, which returns a promise.
 produce.getProduce('june').then(results => console.log(results));
