@@ -1,7 +1,7 @@
 // Needs to:
-// Get date
-// Get produce
-// Get recipes
+// TODO Get date
+// Get produce DONE
+// Get recipes DONE
 // Display recipes
 // Have dietary restriction modifiers (checkbox: vegetarian?)
 // init()
@@ -33,9 +33,5 @@ fetch('http://localhost:3000/recipes?ing=onions,garlic&p=3')
 	.then(res => res.json().then(data => console.log(data)))
 	.catch(err => console.log(err));
 
-// Produce API test
-// Use as base for fetching produce
-fetch('http://localhost:3000/produce?month=july', {method: 'GET'})
-		.then(res => {return res.json()})
-		.then(data => console.log(data))
-		.catch(err => console.log(err));
+// Make a request to produce API, which returns a promise.
+produce.getProduce('june').then(results => console.log(results));
