@@ -10,14 +10,9 @@ const produce = new Produce();
 router.get('/', (req, res) => {
 	// Get month from query string
 	const month = req.query.month;
-
 	// Get produce using produce model
-	const produceData = produce.getProduce(month);
-	// Turn into JSON
-	console.log(produceData); //this does not work
-	// Send produce JSON to client
-	// res.json(produceData);
-	// res.sendFile('index.html');
+	// getProduce returns a promise
+	const produceData = produce.getProduce(month).then(results => {return res.send(results[0])});
 });
 
 module.exports = router;
