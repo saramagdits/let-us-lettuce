@@ -1,6 +1,9 @@
 # Config files
 config.js
 
+# Bundled scripts
+public/javascripts/bundle.js
+
 # Logs
 logs
 *.log
