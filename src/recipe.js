@@ -3,7 +3,7 @@ class Recipe {
 		this.print = 'Hello from the recipe class'
 	}
 
-	getRecipes (ingredients) {
+	queryRecipes (ingredients) {
 		// TODO make ingredients comma separated values
 		return fetch(`http://localhost:3000/recipes?ing=${ingredients}&p=3`)
 				.then(res => res.json().then(data => {return data}))

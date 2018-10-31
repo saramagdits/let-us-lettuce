@@ -10,7 +10,7 @@ const config = require('./config.js');
 const app = express();
 const port = config.port;
 const mongoose = require('mongoose');
-const Produce = require('./modules/produce');
+
 // =======================
 // Configuration
 // =======================
