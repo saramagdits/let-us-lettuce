@@ -6,6 +6,8 @@ class UI {
 		// Selectors
 		this.produceContainer = document.querySelector('#produceContainer');
 		this.produceList = document.querySelector('.produceList');
+		this.recipeContainer = document.querySelector('#recipeContainer');
+		this.recipeList = document.querySelector('.recipeList');
 	}
 
 	displayProduce (produce) {
@@ -17,7 +19,13 @@ class UI {
 		// console.log(produce);
 	}
 
-	// Receive recipe date from API to display
+	displayRecipes (recipes) {
+		let content = '';
+		recipes.hits.forEach(recipe => {
+			content += `<li>${recipe.recipe.label}</li>`;
+		});
+		this.recipeList.innerHTML = content;
+	}
 }
 
 export {UI};

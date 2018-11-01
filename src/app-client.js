@@ -19,7 +19,8 @@ const recipe = new Recipe();
 const ui = new UI();
 
 // Event listeners
-document.addEventListener('DOMContentLoaded', getProduce);
+document.addEventListener('DOMContentLoaded', getAndDisplayProduce);
+document.querySelector('#searchRecipesBtn').addEventListener('click', getAndDisplayRecipes);
 // Console.log tests
 console.log(month.print);
 console.log(produce.print);
@@ -27,7 +28,7 @@ console.log(recipe.print);
 console.log(ui.print);
 
 // Request the current produce and display on the page
-function getProduce () {
+function getAndDisplayProduce () {
 	// Request the user's current month
 	const currentMonth = month.queryMonth();
 	// Make a request to the produce API for the current month. This returns a promise
@@ -40,7 +41,10 @@ function getProduce () {
 			// TODO at this point, this should be passing the recipe results to the UI controller to be displayed
 			// .then(recipeResults => console.log(recipeResults));
 }
-
+function getAndDisplayRecipes () {
+	recipe.queryRecipes('okra')
+			.then(recipeResults => ui.displayRecipes(recipeResults));
+}
 // Request the user's current month (0-11)
 // console.log(month.queryMonth());
 
