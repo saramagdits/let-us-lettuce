@@ -8,6 +8,7 @@ class Produce {
 	constructor() {
 		this.print = 'Hello from the produce class';
 	}
+
 	queryProduce (month) {
 		return fetch(`http://localhost:3000/produce?month=${month}`, {method: 'GET'})
 				.then(res => {return res.json()})

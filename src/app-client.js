@@ -35,10 +35,12 @@ function getProduce () {
 			// Make a request to Recipe Puppy API for the current produce. queryProduce returns an obj, so use only the produce array
 			// The produce array must be converted to a single comma separated string
 	// TODO at this point, this should be passing the produce results to the UI controller to be displayed
-			.then(produceResults => recipe.queryRecipes(produceResults.produce.toString()))
+	// 		.then(produceResults => recipe.queryRecipes(produceResults.produce.toString()))
+			.then(produceResults => {ui.displayProduce(produceResults)});
 			// TODO at this point, this should be passing the recipe results to the UI controller to be displayed
-			.then(recipeResults => console.log(recipeResults));
+			// .then(recipeResults => console.log(recipeResults));
 }
+
 // Request the user's current month (0-11)
 // console.log(month.queryMonth());
 

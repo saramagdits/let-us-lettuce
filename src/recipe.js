@@ -4,7 +4,6 @@ class Recipe {
 	}
 
 	queryRecipes (ingredients) {
-		// TODO make ingredients comma separated values
 		return fetch(`http://localhost:3000/recipes?ing=${ingredients}`)
 				.then(res => res.json().then(data => {return data}))
 				.catch(err => console.log(err));

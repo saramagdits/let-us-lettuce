@@ -2,7 +2,19 @@
 
 class UI {
 	constructor() {
-		this.print = 'Hello from the UI class'
+		this.print = 'Hello from the UI class';
+		// Selectors
+		this.produceContainer = document.querySelector('#produceContainer');
+		this.produceList = document.querySelector('.produceList');
+	}
+
+	displayProduce (produce) {
+		let content = '';
+		produce.produce.forEach(produceItem => {
+			content += `<li>${produceItem}</li>`;
+		});
+		this.produceList.innerHTML = content;
+		// console.log(produce);
 	}
 
 	// Receive recipe date from API to display
