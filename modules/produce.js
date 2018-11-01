@@ -6,7 +6,7 @@
 
 // TODO maybe try moving the produceSchema and SeasonalProduce into the class Produce. or google how to use mongoose model inside of a class
 const mongoose = require('mongoose');
-const produceSchema = new mongoose.Schema({month: String, produce: [String]});
+const produceSchema = new mongoose.Schema({month: String, monthString: String, produce: [String]});
 const SeasonalProduce = mongoose.model('SeasonalProduce', produceSchema);
 
 class Produce {
@@ -14,51 +14,63 @@ class Produce {
 		this.print = 'Hello from the produce class';
 		this.produceData = [
 			{
-				month: 'january',
+				month: '0',
+				monthString: 'january',
 				produce: ['acorn squash', 'beet', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrot', 'cauliflower', 'celery', 'kale', 'leek', 'mushroom', 'parsnip', 'rutabaga', 'swiss chard', 'turnip']
 			},
 			{
-				month: 'february',
+				month: '1',
+				monthString: 'february',
 				produce: ['acorn squash', 'asparagus', 'beet', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrot', 'cauliflower', 'celery', 'kale', 'leek', 'mushroom', 'parsnip', 'rutabaga', 'swiss chard', 'turnip']
 			},
 			{
-				month: 'march',
+				month: '2',
+				monthString: 'march',
 				produce: ['acorn squash', 'artichoke', 'asparagus', 'beet', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrot', 'cauliflower', 'celery', 'leek', 'lettuce', 'mushroom', 'parsnip', 'radish', 'rutabaga']
 			},
 			{
-				month: 'april',
+				month: '3',
+				monthString: 'april',
 				produce: ['artichoke', 'asparagus', 'beet', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrot', 'cauliflower', 'celery', 'leek', 'lettuce', 'mushroom', 'parsnip', 'radish', 'rhubarb', 'rutabaga', 'spring peas', 'zucchini']
 			},
 			{
-				month: 'may',
+				month: '4',
+				monthString: 'may',
 				produce: ['artichoke', 'asparagus', 'beet', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrot', 'celery', 'spring peas', 'swiss chard', 'zucchini']
 			},
 			{
-				month: 'june',
+				month: '5',
+				monthString: 'june',
 				produce: ['artichoke', 'asparagus', 'beet', 'bok choy', 'cabbage', 'carrot', 'celery', 'corn', 'cucumber', 'eggplant', 'lettuce', 'okra', 'summer squash', 'swiss chard', 'tomato', 'zucchini']
 			},
 			{
-				month: 'july',
+				month: '6',
+				monthString: 'july',
 				produce: ['beet', 'bell pepper', 'bok choy', 'cabbage', 'carrot', 'celery', 'corn', 'cucumber', 'eggplant', 'green bean', 'lettuce', 'okra', 'summer squash', 'swiss chard', 'tomato', 'zucchini']
 			},
 			{
-				month: 'august',
+				month: '7',
+				monthString: 'august',
 				produce: ['acorn squash', 'beet', 'bell pepper', 'bok choy', 'butternut squash', 'cabbage', 'carrot', 'celery', 'corn', 'cucumber', 'eggplant', 'green bean', 'lettuce', 'mushroom', 'okra', 'summer squash', 'swiss chard', 'tomato', 'zucchini']
 			},
 			{
-				month: 'september',
+				month: '8',
+				monthString: 'september',
 				produce: ['acorn squash', 'artichoke', 'beet', 'bell pepper', 'bok choy', 'brussels sprouts', 'butternut squash', 'cabbage', 'carrot', 'cauliflower', 'celery', 'corn', 'cucumber', 'eggplant', 'green bean', 'lettuce', 'mushroom', 'okra', 'pumpkin', 'spinach', 'summer squash', 'sweet potato', 'swiss chard', 'tomato']
 			},
 			{
-				month: 'october',
+				month: '9',
+				monthString: 'october',
 				produce: ['acorn squash', 'artichoke', 'beet', 'bell pepper', 'bok choy', 'broccoli', 'brussels sprouts', 'butternut squash', 'cabbage', 'carrot', 'cauliflower', 'celery', 'corn', 'cucumber', 'eggplant', 'leek', 'lettuce', 'mushroom', 'okra', 'parsnip', 'pumpkin', 'rutabaga', 'spinach', 'summer squash', 'sweet potato', 'swiss chard', 'tomato', 'winter squash']
 			},
 			{
-				month: 'november',
+				month: '10',
+				monthString: 'november',
 				produce: ['acorn squash', 'artichoke', 'beet', 'bell pepper', 'bok choy', 'broccoli', 'brussels sprouts', 'cabbage', 'carrots', 'cauliflower', 'celery', 'corn', 'cucumber', 'mushroom', 'okra', 'parsnip', 'pumpkin', 'rutabaga', 'spinach', 'sweet potato', 'tomato', 'winter squash']
 			},
 			{
-				month: 'december',
+				month: '11',
+				monthString: 'december',
 				produce: ['acorn squash', 'artichoke', 'beet', 'bell pepper', 'bok choy', 'broccoli', 'cabbage', 'carrot', 'cauliflower', 'celery', 'lettuce', 'mushroom', 'parsnip', 'rutabaga', 'sweet potato', 'winter squash']
 			}
 		];
