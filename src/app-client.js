@@ -41,7 +41,8 @@ function getAndDisplayProduce () {
 			// TODO at this point, this should be passing the recipe results to the UI controller to be displayed
 			// .then(recipeResults => console.log(recipeResults));
 }
-function getAndDisplayRecipes () {
+function getAndDisplayRecipes (e) {
+	e.preventDefault();
 	recipe.queryRecipes('okra')
 			.then(recipeResults => ui.displayRecipes(recipeResults));
 }
