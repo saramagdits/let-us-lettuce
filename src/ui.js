@@ -22,7 +22,11 @@ class UI {
 	displayRecipes (recipes) {
 		let content = '';
 		recipes.hits.forEach(recipe => {
-			content += `<li>${recipe.recipe.label}</li>`;
+			content += `<li>
+										<a href='${recipe.recipe.url}'>${recipe.recipe.label}</a>
+										<i>${recipe.recipe.source}</i>
+										<img src='${recipe.recipe.image}'>
+									</li>`;
 		});
 		this.recipeList.innerHTML = content;
 	}
