@@ -10,6 +10,7 @@ class UI {
 		this.recipeList = document.querySelector('.recipeList');
 	}
 
+	// Receive produce results and display them on the page as clickable tiles
 	displayProduce (produce) {
 		let content = '';
 		produce.produce.forEach(produceItem => {
@@ -18,7 +19,18 @@ class UI {
 		this.produceList.innerHTML = content;
 		// console.log(produce);
 	}
+	// Give the produce styling to signify it has been selected
+	addSelectedStyling (produce) {
 
+	}
+	// Remove the selected styling for one or more produce
+	removeSelectedStyling (produce) {
+
+		// Let this function accept an array of produce, and cycle through each to remove styling.
+		// This should be able to clear styling from all produce in the selected produce array if the 'clear' button is clickedhjy
+	}
+
+	// Receive recipe results and display them on the page as cards
 	displayRecipes (recipes) {
 		let content = '';
 		recipes.hits.forEach(recipe => {
@@ -29,6 +41,14 @@ class UI {
 									</li>`;
 		});
 		this.recipeList.innerHTML = content;
+	}
+
+	// Display a success or error alert, with custom text
+	showAlert (alertMsg, type) {
+		// If alert type is success
+			// Display green alert with alertMsg as inner text
+		// If alert type is error
+			// Display red alert with alertMsg as inner text
 	}
 }
 
