@@ -49,7 +49,7 @@ function getAndDisplayRecipes (e) {
 function produceClicked (e) {
 	e.preventDefault();
 	// Drill down to select the targeted produce
-	let targetProduceName = [];
+	let targetProduceName = '';
 	// Check if the item clicked was a produce item
 	if (e.target.classList.contains('produce-link')) {
 		// Set target produce to the clicked produce
@@ -60,15 +60,24 @@ function produceClicked (e) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(targetProduceName);
 			// Have the UI remove the selection styling
+			ui.removeSelectedStyling(e.target);
 		} else {
 			// If it was NOT already selected:
-			console.log('this produce is not in the array');
 			// Check if the produce array contains the max 4 items
-			// If it already contains the max 4 items:
-			// Have the UI show an alert, telling the user they reached max, and should deselect something to continue
-			// If it does NOT contain the max 4 items:
-			// Add the target produce to the selected produce array using produceSelector.deselectProduce()
-			// Have the UI add the selection styling
+			if (produceSelector.checkProduceLength() === 4) {
+				// If it already contains the max 4 items:
+				console.log('there are 4 things!');
+				// Have the UI show an alert, telling the user they reached max, and should deselect something to continue
+				ui.showAlert('Only 4 vegetables may be selected', 'error');
+			} else {
+				// If it does NOT contain the max 4 items:
+				// Add the target produce to the selected produce array using produceSelector.selectProduce()
+				console.log('there are not 4 things');
+				produceSelector.selectProduce(targetProduceName);
+				console.log(produceSelector.checkProduceLength());
+				// Have the UI add the selection styling
+				ui.addSelectedStyling(e.target);
+			}
 		}
 	}
 

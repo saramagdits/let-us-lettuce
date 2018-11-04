@@ -1,7 +1,7 @@
 class ProduceSelector {
 	constructor() {
 		this.print = 'Hello from the produce selector class';
-		this.selectedProduceList = ['beet','artichoke'];
+		this.selectedProduceList = [];
 	}
 	// Check if target produce already belongs to array
 	checkProduce (targetProduce) {
@@ -9,8 +9,8 @@ class ProduceSelector {
 	}
 
 	// Add produce to selected produce array
-	selectProduce (e) {
-
+	selectProduce (targetProduce) {
+		this.selectedProduceList.push(targetProduce);
 	}
 	// Remove specific produce from selected produce array
 	deselectProduce (targetProduce) {
@@ -22,6 +22,9 @@ class ProduceSelector {
 	// Clear the entire selected produce array
 	clearAllProduce (e) {
 
+	}
+	checkProduceLength () {
+		return this.selectedProduceList.length;
 	}
 }
 

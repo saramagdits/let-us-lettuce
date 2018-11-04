@@ -21,13 +21,14 @@ class UI {
 	}
 	// Give the produce styling to signify it has been selected
 	addSelectedStyling (produce) {
-
+		produce.classList.add('selected');
 	}
 	// Remove the selected styling for one or more produce
 	removeSelectedStyling (produce) {
-
-		// Let this function accept an array of produce, and cycle through each to remove styling.
-		// This should be able to clear styling from all produce in the selected produce array if the 'clear' button is clickedhjy
+		produce.classList.remove('selected');
+	}
+	removeAllSelectedStyling (produceArray) {
+		produceArray.forEach(produce => produce.classList.remove('selected'));
 	}
 
 	// Receive recipe results and display them on the page as cards
@@ -45,10 +46,16 @@ class UI {
 
 	// Display a success or error alert, with custom text
 	showAlert (alertMsg, type) {
-		// If alert type is success
+		if (type === 'success') {
+			// If alert type is success
 			// Display green alert with alertMsg as inner text
-		// If alert type is error
+			console.log(alertMsg);
+		}
+		else if (type === 'error') {
+			// If alert type is error
+			console.log('alertMsg');
 			// Display red alert with alertMsg as inner text
+		}
 	}
 }
 
