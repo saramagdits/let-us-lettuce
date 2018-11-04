@@ -19,13 +19,16 @@ class UI {
 		this.produceList.innerHTML = content;
 		// console.log(produce);
 	}
-	// Give the produce styling to signify it has been selected
-	addSelectedStyling (produce) {
-		produce.classList.add('selected');
-	}
-	// Remove the selected styling for one or more produce
-	removeSelectedStyling (produce) {
-		produce.classList.remove('selected');
+	//  Give the produce styling to signify it has been selected
+	// addSelectedStyling (produce) {
+	// 	produce.classList.add('selected');
+	// }
+	//  Remove the selected styling for one or more produce
+	// removeSelectedStyling (produce) {
+	// 	produce.classList.remove('selected');
+	// }
+	toggleSelected (produce) {
+		produce.classList.toggle('selected');
 	}
 	removeAllSelectedStyling (produceArray) {
 		produceArray.forEach(produce => produce.classList.remove('selected'));
@@ -53,7 +56,7 @@ class UI {
 		}
 		else if (type === 'error') {
 			// If alert type is error
-			console.log('alertMsg');
+			console.log(alertMsg);
 			// Display red alert with alertMsg as inner text
 		}
 	}

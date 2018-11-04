@@ -45,6 +45,8 @@ function getAndDisplayRecipes (e) {
 			.then(recipeResults => ui.displayRecipes(recipeResults));
 }
 
+// TODO maybe combine selectProduce and deselectProduce into toggleProduce.
+// TODO could also combine addSelectedStyling and removeSelectedStyling into toggleSelectedStyling
 // Handles the produce target being clicked
 function produceClicked (e) {
 	e.preventDefault();
@@ -60,7 +62,8 @@ function produceClicked (e) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(targetProduceName);
 			// Have the UI remove the selection styling
-			ui.removeSelectedStyling(e.target);
+			// ui.removeSelectedStyling(e.target);
+			ui.toggleSelected(e.target);
 		} else {
 			// If it was NOT already selected:
 			// Check if the produce array contains the max 4 items
@@ -76,7 +79,8 @@ function produceClicked (e) {
 				produceSelector.selectProduce(targetProduceName);
 				console.log(produceSelector.checkProduceLength());
 				// Have the UI add the selection styling
-				ui.addSelectedStyling(e.target);
+				// ui.addSelectedStyling(e.target);
+				ui.toggleSelected(e.target);
 			}
 		}
 	}
