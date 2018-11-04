@@ -18,13 +18,18 @@ class ProduceSelector {
 		// console.log(index);
 		this.selectedProduceList.splice(index, 1);
 	}
+	toggleProduce (targetProduce) {
 
+	}
 	// Clear the entire selected produce array
 	clearAllProduce (e) {
 
 	}
 	checkProduceLength () {
 		return this.selectedProduceList.length;
+	}
+	getSelectedProduce () {
+		return this.selectedProduceList.toString();
 	}
 }
 

@@ -46,40 +46,24 @@ function getAndDisplayRecipes (e) {
 }
 
 // TODO maybe combine selectProduce and deselectProduce into toggleProduce.
-// TODO could also combine addSelectedStyling and removeSelectedStyling into toggleSelectedStyling
 // Handles the produce target being clicked
 function produceClicked (e) {
 	e.preventDefault();
-	// Drill down to select the targeted produce
-	let targetProduceName = '';
+	let produce = '';
 	// Check if the item clicked was a produce item
 	if (e.target.classList.contains('produce-link')) {
-		// Set target produce to the clicked produce
-		targetProduceName = e.target.dataset.name;
-		// Check if the produce was already selected
-		if (produceSelector.checkProduce(targetProduceName)) {
-			// If it was already selected:
+		produce = e.target.dataset.name;
+		// produceSelector.toggleProduce(produce);
+		if (produceSelector.checkProduce(produce)) {
 			// Remove the produce from the selected produce array
-			produceSelector.deselectProduce(targetProduceName);
-			// Have the UI remove the selection styling
-			// ui.removeSelectedStyling(e.target);
+			produceSelector.deselectProduce(produce);
 			ui.toggleSelected(e.target);
 		} else {
-			// If it was NOT already selected:
-			// Check if the produce array contains the max 4 items
 			if (produceSelector.checkProduceLength() === 4) {
-				// If it already contains the max 4 items:
-				console.log('there are 4 things!');
-				// Have the UI show an alert, telling the user they reached max, and should deselect something to continue
 				ui.showAlert('Only 4 vegetables may be selected', 'error');
 			} else {
-				// If it does NOT contain the max 4 items:
-				// Add the target produce to the selected produce array using produceSelector.selectProduce()
-				console.log('there are not 4 things');
-				produceSelector.selectProduce(targetProduceName);
-				console.log(produceSelector.checkProduceLength());
-				// Have the UI add the selection styling
-				// ui.addSelectedStyling(e.target);
+				// Add the produce to the selected produce array
+				produceSelector.selectProduce(produce);
 				ui.toggleSelected(e.target);
 			}
 		}
@@ -93,15 +77,18 @@ function produceClicked (e) {
 function searchAndDisplayRecipes (e) {
 	e.preventDefault();
 	// Check if the produce array contains <= 4 items
-		// If it contains <= 4 items:
-			// Have the UI remove selection styling from all produce
-			// Stringify the array
-			// Send the array to recipe.queryRecipes
-			// Receive the recipe results and pass them to UI.displayRecipes
-		// If it contains 0 items:
-			// Have the UI show an alert that tells the user they must select at least 1 vegetable to get results
+	if (produceSelector.checkProduceLength() > 0) {
+		ui.removeAllSelectedStyling();
+		const selectedProduce = produceSelector.getSelectedProduce();
+		recipe.queryRecipes(selectedProduce)
+				.then(recipeResults => ui.displayRecipes(recipeResults));
+
+	} else {
+		ui.showAlert('You must select at least 1 vegetable', 'error');
+	}
 }
 
+// TODO this thing
 // Clears the selection styling for selected produce, as well as removing them from the selected produce array
 function clearSelectedProduce (e) {
 	e.preventDefault();

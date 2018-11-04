@@ -30,8 +30,8 @@ class UI {
 	toggleSelected (produce) {
 		produce.classList.toggle('selected');
 	}
-	removeAllSelectedStyling (produceArray) {
-		produceArray.forEach(produce => produce.classList.remove('selected'));
+	removeAllSelectedStyling () {
+		document.querySelectorAll('.selected').forEach(produce => {produce.classList.remove('selected')});
 	}
 
 	// Receive recipe results and display them on the page as cards
