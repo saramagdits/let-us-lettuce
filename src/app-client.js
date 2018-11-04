@@ -53,7 +53,7 @@ function produceClicked (e) {
 	// Check if the item clicked was a produce item
 	if (e.target.classList.contains('produce-link')) {
 		produce = e.target.dataset.name;
-		produceSelector.toggleProduce(produce);
+		// produceSelector.toggleProduce(produce);
 		if (produceSelector.checkProduce(produce)) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(produce);
@@ -77,9 +77,13 @@ function produceClicked (e) {
 function searchAndDisplayRecipes (e) {
 	e.preventDefault();
 	// Check if the produce array contains <= 4 items
-		// If it contains <= 4 items:
-			// Have the UI remove selection styling from all produce
-			// Stringify the array
+	if (produceSelector.checkProduceLength() > 0) {
+		ui.removeAllSelectedStyling();
+		const selectedProduce = produceSelector.getSelectedProduce();
+		recipe.queryRecipes(selectedProduce)
+				.then(recipeResults => ui.displayRecipes(recipeResults));
+
+	}
 			// Send the array to recipe.queryRecipes
 			// Receive the recipe results and pass them to UI.displayRecipes
 		// If it contains 0 items:

@@ -28,6 +28,9 @@ class ProduceSelector {
 	checkProduceLength () {
 		return this.selectedProduceList.length;
 	}
+	getSelectedProduce () {
+		return this.selectedProduceList.toString();
+	}
 }
 
 export {ProduceSelector};
