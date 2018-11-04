@@ -6,18 +6,30 @@ class UI {
 		// Selectors
 		this.produceContainer = document.querySelector('#produceContainer');
 		this.produceList = document.querySelector('.produceList');
+		this.recipeContainer = document.querySelector('#recipeContainer');
+		this.recipeList = document.querySelector('.recipeList');
 	}
 
 	displayProduce (produce) {
 		let content = '';
 		produce.produce.forEach(produceItem => {
-			content += `<li>${produceItem}</li>`;
+			content += `<li>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}.jpg'></li>`;
 		});
 		this.produceList.innerHTML = content;
 		// console.log(produce);
 	}
 
-	// Receive recipe date from API to display
+	displayRecipes (recipes) {
+		let content = '';
+		recipes.hits.forEach(recipe => {
+			content += `<li>
+										<a href='${recipe.recipe.url}'>${recipe.recipe.label}</a>
+										<i>${recipe.recipe.source}</i>
+										<img src='${recipe.recipe.image}'>
+									</li>`;
+		});
+		this.recipeList.innerHTML = content;
+	}
 }
 
 export {UI};
