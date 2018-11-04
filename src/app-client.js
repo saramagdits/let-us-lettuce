@@ -83,13 +83,12 @@ function searchAndDisplayRecipes (e) {
 		recipe.queryRecipes(selectedProduce)
 				.then(recipeResults => ui.displayRecipes(recipeResults));
 
+	} else {
+		ui.showAlert('You must select at least 1 vegetable', 'error');
 	}
-			// Send the array to recipe.queryRecipes
-			// Receive the recipe results and pass them to UI.displayRecipes
-		// If it contains 0 items:
-			// Have the UI show an alert that tells the user they must select at least 1 vegetable to get results
 }
 
+// TODO this thing
 // Clears the selection styling for selected produce, as well as removing them from the selected produce array
 function clearSelectedProduce (e) {
 	e.preventDefault();
