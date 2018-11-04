@@ -49,6 +49,7 @@ function getAndDisplayRecipes (e) {
 function produceClicked (e) {
 	e.preventDefault();
 	// Drill down to select the targeted produce
+
 	// Check if the produce was already selected
 		// If it was already selected:
 			// Remove the produce from the selected produce array using produceSelector.selectProduce()
@@ -60,7 +61,6 @@ function produceClicked (e) {
 			// If it does NOT contain the max 4 items:
 				// Add the target produce to the selected produce array using produceSelector.deselectProduce()
 				// Have the UI add the selection styling
-
 }
 
 // Handles the 'search' btn being clicked. Checks the selected produce array before making a request to the Recipe API, and displaying the results via the UI
@@ -76,7 +76,7 @@ function searchAndDisplayRecipes (e) {
 			// Have the UI show an alert that tells the user they must select at least 1 vegetable to get results
 }
 
-// Clears the selction styling for selected produce, as well as removing them from the selected produce array
+// Clears the selection styling for selected produce, as well as removing them from the selected produce array
 function clearSelectedProduce (e) {
 	e.preventDefault();
 	// Have the UI remove selected styling from any produce in the array

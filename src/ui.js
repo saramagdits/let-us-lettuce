@@ -14,7 +14,7 @@ class UI {
 	displayProduce (produce) {
 		let content = '';
 		produce.produce.forEach(produceItem => {
-			content += `<li>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}.jpg'></li>`;
+			content += `<li><a href='#' data-name='${produceItem}'>${produceItem}<img src='images/${produceItem.replace(/\s/g, "")}.jpg'></a></li>`;
 		});
 		this.produceList.innerHTML = content;
 		// console.log(produce);
