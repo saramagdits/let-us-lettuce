@@ -49,18 +49,31 @@ function getAndDisplayRecipes (e) {
 function produceClicked (e) {
 	e.preventDefault();
 	// Drill down to select the targeted produce
-
-	// Check if the produce was already selected
-		// If it was already selected:
-			// Remove the produce from the selected produce array using produceSelector.selectProduce()
+	let targetProduceName = [];
+	// Check if the item clicked was a produce item
+	if (e.target.classList.contains('produce-link')) {
+		// Set target produce to the clicked produce
+		targetProduceName = e.target.dataset.name;
+		// Check if the produce was already selected
+		if (produceSelector.checkProduce(targetProduceName)) {
+			// If it was already selected:
+			// Remove the produce from the selected produce array
+			produceSelector.deselectProduce(targetProduceName);
 			// Have the UI remove the selection styling
-	// If it was NOT already selected:
-		// Check if the produce array contains the max 4 items
+		} else {
+			// If it was NOT already selected:
+			console.log('this produce is not in the array');
+			// Check if the produce array contains the max 4 items
 			// If it already contains the max 4 items:
-				// Have the UI show an alert, telling the user they reached max, and should deselect something to continue
+			// Have the UI show an alert, telling the user they reached max, and should deselect something to continue
 			// If it does NOT contain the max 4 items:
-				// Add the target produce to the selected produce array using produceSelector.deselectProduce()
-				// Have the UI add the selection styling
+			// Add the target produce to the selected produce array using produceSelector.deselectProduce()
+			// Have the UI add the selection styling
+		}
+	}
+
+
+
 }
 
 // Handles the 'search' btn being clicked. Checks the selected produce array before making a request to the Recipe API, and displaying the results via the UI
