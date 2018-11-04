@@ -18,7 +18,9 @@ class ProduceSelector {
 		// console.log(index);
 		this.selectedProduceList.splice(index, 1);
 	}
+	toggleProduce (targetProduce) {
 
+	}
 	// Clear the entire selected produce array
 	clearAllProduce (e) {
 
