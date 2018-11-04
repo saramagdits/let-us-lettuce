@@ -1,31 +1,32 @@
-// Needs to:
-// Get month DONE
-// Get produce DONE
-// Get recipes DONE
-// Display recipes
-// Have dietary restriction modifiers (checkbox: vegetarian?)
+// TODO Have dietary restriction modifiers (checkbox: vegetarian?)
 // init()
 
 // Import modules
 import {Month} from './month.js';
 import {Produce} from './produce.js';
+import {ProduceSelector} from './produce-selector';
 import {Recipe} from './recipe.js';
 import {UI} from './ui.js';
 
 // Instantiate classes
 const month = new Month();
 const produce = new Produce();
+const produceSelector = new ProduceSelector();
 const recipe = new Recipe();
 const ui = new UI();
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', getAndDisplayProduce);
-document.querySelector('#searchRecipesBtn').addEventListener('click', getAndDisplayRecipes);
+// document.querySelector('#searchRecipesBtn').addEventListener('click', getAndDisplayRecipes);
+document.querySelector('.produceList').addEventListener('click', produceClicked);
+document.querySelector('#searchRecipesBtn').addEventListener('click', searchAndDisplayRecipes);
+document.querySelector('#clearSelectedProduceBtn').addEventListener('click', clearSelectedProduce);
 // Console.log tests
 console.log(month.print);
 console.log(produce.print);
 console.log(recipe.print);
 console.log(ui.print);
+console.log(produceSelector.print);
 
 // Request the current produce and display on the page
 function getAndDisplayProduce () {
@@ -33,25 +34,64 @@ function getAndDisplayProduce () {
 	const currentMonth = month.queryMonth();
 	// Make a request to the produce API for the current month. This returns a promise
 	produce.queryProduce(currentMonth)
-			// Make a request to Recipe Puppy API for the current produce. queryProduce returns an obj, so use only the produce array
-			// The produce array must be converted to a single comma separated string
-	// TODO at this point, this should be passing the produce results to the UI controller to be displayed
-	// 		.then(produceResults => recipe.queryRecipes(produceResults.produce.toString()))
-			.then(produceResults => {ui.displayProduce(produceResults)});
-			// TODO at this point, this should be passing the recipe results to the UI controller to be displayed
-			// .then(recipeResults => console.log(recipeResults));
+			// Make a request to Recipe API for the current produce
+		.then(produceResults => {ui.displayProduce(produceResults)});
 }
+
+// To be removed..
 function getAndDisplayRecipes (e) {
 	e.preventDefault();
 	recipe.queryRecipes('okra')
 			.then(recipeResults => ui.displayRecipes(recipeResults));
 }
-// Request the user's current month (0-11)
-// console.log(month.queryMonth());
+
+// TODO maybe combine selectProduce and deselectProduce into toggleProduce.
+// Handles the produce target being clicked
+function produceClicked (e) {
+	e.preventDefault();
+	let produce = '';
+	// Check if the item clicked was a produce item
+	if (e.target.classList.contains('produce-link')) {
+		produce = e.target.dataset.name;
+		// produceSelector.toggleProduce(produce);
+		if (produceSelector.checkProduce(produce)) {
+			// Remove the produce from the selected produce array
+			produceSelector.deselectProduce(produce);
+			ui.toggleSelected(e.target);
+		} else {
+			if (produceSelector.checkProduceLength() === 4) {
+				ui.showAlert('Only 4 vegetables may be selected', 'error');
+			} else {
+				// Add the produce to the selected produce array
+				produceSelector.selectProduce(produce);
+				ui.toggleSelected(e.target);
+			}
+		}
+	}
 
 
-// Make a request to Recipe Puppy API, which returns a promise
-// recipe.queryRecipes('artichoke, asparagus, beet, bok choy, cabbage, carrot, celery, corn, cucumber, eggplant, lettuce, okra, summer squash, swiss chard, tomato, zucchini').then(results => console.log(results));
 
-// Make a request to produce API, which returns a promise.
-// produce.queryProduce('1').then(results => console.log(results));
+}
+
+// Handles the 'search' btn being clicked. Checks the selected produce array before making a request to the Recipe API, and displaying the results via the UI
+function searchAndDisplayRecipes (e) {
+	e.preventDefault();
+	// Check if the produce array contains <= 4 items
+	if (produceSelector.checkProduceLength() > 0) {
+		ui.removeAllSelectedStyling();
+		const selectedProduce = produceSelector.getSelectedProduce();
+		recipe.queryRecipes(selectedProduce)
+				.then(recipeResults => ui.displayRecipes(recipeResults));
+
+	} else {
+		ui.showAlert('You must select at least 1 vegetable', 'error');
+	}
+}
+
+// TODO this thing
+// Clears the selection styling for selected produce, as well as removing them from the selected produce array
+function clearSelectedProduce (e) {
+	e.preventDefault();
+	// Have the UI remove selected styling from any produce in the array
+	// Have the produce-selector clear the selected produce array
+}
