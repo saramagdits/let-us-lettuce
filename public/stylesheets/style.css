@@ -1,11 +1,35 @@
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
-/*body {*/
-	/*padding-top: 3.5rem;*/
-/*}*/
+/*
+ * Color Scheme
+
+ Orange: #e96909
+ 		lighter x1: #f68b28
+ 		lighter x2: #ffa94d
+ 		darker x1: #c54f02
+ 		darker x2: #a13c00
+
+ 	Green: #67701b
+ 		lighter x1: #868d30
+ 		lighter x2: #aab053
+ 		darker x1: #4a560c
+ 		darker x2: #2b3702
+
+ 	Yellow: #fff57f
+ 		lighter x1: #fff8a9
+ 		lighter x2: #fffcd3
+ 		darker x1: #e4ca47
+ 		darker x2: #c5a322
+
+ 	Shadow (from lightest to darkest):
+ 		#1: #e9dcd1
+ 		#2: #c2aa96
+ 		#3: #997d66
+ 		#4: #654d39
+ 		#5: #120d08
+ */
+
 /*
  * Custom translucent site header
  */
-
 .site-header {
 	background-color: rgba(0, 0, 0, .85);
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
