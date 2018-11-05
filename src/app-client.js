@@ -17,37 +17,22 @@ const ui = new UI();
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', getAndDisplayProduce);
-// document.querySelector('#searchRecipesBtn').addEventListener('click', getAndDisplayRecipes);
 document.querySelector('.produceList').addEventListener('click', produceClicked);
 document.querySelector('#searchRecipesBtn').addEventListener('click', searchAndDisplayRecipes);
 document.querySelector('#clearSelectedProduceBtn').addEventListener('click', clearSelectedProduce);
-// Console.log tests
-console.log(month.print);
-console.log(produce.print);
-console.log(recipe.print);
-console.log(ui.print);
-console.log(produceSelector.print);
 
 // Request the current produce and display on the page
-function getAndDisplayProduce () {
-	// Request the user's current month
+function getAndDisplayProduce() {
 	const currentMonth = month.queryMonth();
 	// Make a request to the produce API for the current month. This returns a promise
 	produce.queryProduce(currentMonth)
-			// Make a request to Recipe API for the current produce
-		.then(produceResults => {ui.displayProduce(produceResults)});
-}
-
-// To be removed..
-function getAndDisplayRecipes (e) {
-	e.preventDefault();
-	recipe.queryRecipes('okra')
-			.then(recipeResults => ui.displayRecipes(recipeResults));
+	// Make a request to Recipe API for the current produce
+			.then(produceResults => {ui.displayProduce(produceResults)});
 }
 
 // TODO maybe combine selectProduce and deselectProduce into toggleProduce.
 // Handles the produce target being clicked
-function produceClicked (e) {
+function produceClicked(e) {
 	e.preventDefault();
 	let produce = '';
 	// Check if the item clicked was a produce item
@@ -68,14 +53,12 @@ function produceClicked (e) {
 			}
 		}
 	}
-
-
-
 }
 
 // Handles the 'search' btn being clicked. Checks the selected produce array before making a request to the Recipe API, and displaying the results via the UI
-function searchAndDisplayRecipes (e) {
+function searchAndDisplayRecipes(e) {
 	e.preventDefault();
+	ui.clearAlerts();
 	// Check if the produce array contains <= 4 items
 	if (produceSelector.checkProduceLength() > 0) {
 		ui.removeAllSelectedStyling();
@@ -94,11 +77,14 @@ function searchAndDisplayRecipes (e) {
 		ui.showAlert('You must select at least 1 vegetable', 'error');
 	}
 }
-// TODO handle case where no relevant recipes are returned
 
+// TODO handle case where no relevant recipes are returned
+// TODO this should clear any previous recipes?
 // Clears the selection styling for selected produce, as well as removing them from the selected produce array
-function clearSelectedProduce (e) {
+function clearSelectedProduce(e) {
 	e.preventDefault();
+	ui.clearAlerts();
+	ui.clearRecipes();
 	// Have the UI remove selected styling from any produce in the array
 	ui.removeAllSelectedStyling();
 	// Have the produce-selector clear the selected produce array
