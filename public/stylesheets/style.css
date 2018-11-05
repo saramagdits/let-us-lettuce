@@ -24,26 +24,28 @@
  		#2: #c2aa96
  		#3: #997d66
  		#4: #654d39
- 		#5: #120d08
+ 		#5: #120d08 or rgb(18, 13, 8)
  */
 
 /*
  * Custom translucent site header
  */
 .site-header {
-	background-color: rgba(0, 0, 0, .85);
+	background-color: rgba(18, 13, 8, .85);
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
 	backdrop-filter: saturate(180%) blur(20px);
 }
 .site-header a {
-	color: #999;
+	color: #c2aa96;
 	transition: ease-in-out color .15s;
 }
 .site-header a:hover {
-	color: #fff;
+	color: #e9dcd1;
 	text-decoration: none;
 }
-
+.container{
+	max-width: 960px;
+}
 /*TODO optimize this image, it's huge*/
 .landing-container{
 	background-image: url('../images/landing.jpg');
