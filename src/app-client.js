@@ -81,7 +81,14 @@ function searchAndDisplayRecipes (e) {
 		ui.removeAllSelectedStyling();
 		const selectedProduce = produceSelector.getSelectedProduce();
 		recipe.queryRecipes(selectedProduce)
-				.then(recipeResults => ui.displayRecipes(recipeResults));
+				.then(recipeResults => {
+					if (recipeResults.count > 0) {
+						ui.displayRecipes(recipeResults)
+					} else {
+						ui.showAlert('Sorry, no recipes could be found with that combination. Try again.', 'error');
+					}
+
+				});
 
 	} else {
 		ui.showAlert('You must select at least 1 vegetable', 'error');
@@ -89,7 +96,6 @@ function searchAndDisplayRecipes (e) {
 }
 // TODO handle case where no relevant recipes are returned
 
-// TODO this thing
 // Clears the selection styling for selected produce, as well as removing them from the selected produce array
 function clearSelectedProduce (e) {
 	e.preventDefault();
