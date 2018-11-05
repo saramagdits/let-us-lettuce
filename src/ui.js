@@ -50,15 +50,22 @@ class UI {
 	// Display a success or error alert, with custom text
 	showAlert (alertMsg, type) {
 		if (type === 'success') {
-			// If alert type is success
-			// Display green alert with alertMsg as inner text
-			console.log(alertMsg);
+			let content = document.createElement('div');
+			content.classList.add('alert','alert-success');
+			content.role = 'alert';
+			content.innerHTML = alertMsg;
+			this.recipeContainer.insertBefore(content, this.recipeList);
 		}
 		else if (type === 'error') {
-			// If alert type is error
-			console.log(alertMsg);
-			// Display red alert with alertMsg as inner text
+			let content = document.createElement('div');
+			content.classList.add('alert','alert-danger');
+			content.role = 'alert';
+			content.innerHTML = alertMsg;
+			this.recipeContainer.insertBefore(content, this.recipeList);
 		}
+	}
+	clearAlerts () {
+		document.querySelectorAll('.alert').forEach(alert => alert.remove());
 	}
 }
 
