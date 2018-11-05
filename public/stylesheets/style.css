@@ -56,3 +56,9 @@
 .selected{
 	border: 3px solid blue;
 }
+.recipe-card{
+	width: 18rem;
+}
+.recipe-card .badge{
+	margin-right: 0.25rem;
+}
