@@ -67,6 +67,11 @@ class UI {
 	clearAlerts () {
 		document.querySelectorAll('.alert').forEach(alert => alert.remove());
 	}
+	clearRecipes () {
+		while (this.recipeList.firstChild) {
+			this.recipeList.removeChild(this.recipeList.firstChild);
+		}
+	}
 }
 
 export {UI};

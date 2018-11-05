@@ -102,6 +102,7 @@ function searchAndDisplayRecipes (e) {
 function clearSelectedProduce (e) {
 	e.preventDefault();
 	ui.clearAlerts();
+	ui.clearRecipes();
 	// Have the UI remove selected styling from any produce in the array
 	ui.removeAllSelectedStyling();
 	// Have the produce-selector clear the selected produce array
