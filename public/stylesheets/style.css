@@ -28,7 +28,9 @@
  		#5: #654d39
  		#6: #120d08 or rgb(18, 13, 8) (nearly black)
  */
-
+html, body {
+	background-color: #fff8f2;
+}
 /*
  * Custom translucent site header
  */
@@ -52,6 +54,9 @@
 .landing-container{
 	background-image: url('../images/landing.jpg');
 	background-size: cover;
+}
+.produceList li {
+	background-color: #fff;
 }
 .selected{
 	border: 3px solid blue;

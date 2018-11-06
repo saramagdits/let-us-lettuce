@@ -4,9 +4,9 @@ class UI {
 	constructor() {
 		this.print = 'Hello from the UI class';
 		// Selectors
-		this.produceContainer = document.querySelector('#produceContainer');
+		this.produceContainer = document.querySelector('#produce-container');
 		this.produceList = document.querySelector('.produceList');
-		this.recipeContainer = document.querySelector('#recipeContainer');
+		this.recipeContainer = document.querySelector('#recipe-container');
 		this.recipeList = document.querySelector('.recipeList');
 	}
 
@@ -14,7 +14,7 @@ class UI {
 	displayProduce(produce) {
 		let content = '';
 		produce.produce.forEach(produceItem => {
-			content += `<li><a href='#' class='produce-link' data-name='${produceItem}'>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}.jpg'></a></li>`;
+			content += `<li><a href='#' class='produce-link' data-name='${produceItem}'>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}-sm.jpg'></a></li>`;
 		});
 		this.produceList.innerHTML = content;
 		// console.log(produce);
