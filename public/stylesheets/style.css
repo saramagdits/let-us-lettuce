@@ -68,16 +68,22 @@ html, body {
 	/*width: 200px;*/
 /*}*/
 #produce-container{
-	/*justify-content: center;*/
+	background-color: #fff;
 }
 .produceList{
-	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 /*Do something like this for mobile version*/
 /*.produce-card{*/
 	/*width:100px;*/
 /*}*/
-
+.produce-card{
+	width:20%;
+	padding: 2%;
+	border: none;
+}
 .produce-card .card-title{
 	/*background-color: rgba(18, 13, 8, 0.5);*/
 	background-color: rgba(255,248,242, 0.9);
@@ -90,6 +96,16 @@ html, body {
 	width: 100%;
 	text-align: center;
 	text-transform: capitalize;
+}
+.card-img-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 10%;
+	left: 0;
+	padding: 1.25rem;
+	width: 80%;
+	margin: 0 auto;
 }
 .selected{
 	border: 3px solid blue;
