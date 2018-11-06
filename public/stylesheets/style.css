@@ -117,12 +117,23 @@ html, body {
 .selected{
 	border: 3px solid blue;
 }
+.alert{
+	margin: 1rem;
+}
 #searchRecipesBtn{
 	/*margin-left: 1rem;*/
+}
+#recipe-container{
+	background-color: #fff;
+	padding: 1rem;
+	margin-bottom: 1rem;
 }
 .recipe-card{
 	width: 18rem;
 }
 .recipe-card .badge{
 	margin-right: 0.25rem;
+}
+footer{
+	background-color: #fff;
 }
