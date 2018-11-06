@@ -67,9 +67,17 @@ html, body {
 /*.produce-card {*/
 	/*width: 200px;*/
 /*}*/
-.produceList{
-	justify-content: space-evenly;
+#produce-container{
+	/*justify-content: center;*/
 }
+.produceList{
+	justify-content: center;
+}
+/*Do something like this for mobile version*/
+/*.produce-card{*/
+	/*width:100px;*/
+/*}*/
+
 .produce-card .card-title{
 	/*background-color: rgba(18, 13, 8, 0.5);*/
 	background-color: rgba(255,248,242, 0.9);
