@@ -48,34 +48,37 @@ html, body {
 	text-decoration: none;
 }
 .container{
-	max-width: 960px;
+	max-width: 1200px;
 }
 /*TODO optimize this image, it's huge*/
 .landing-container{
 	background-image: url('../images/landing.jpg');
 	background-size: cover;
 }
-.produceList{
-	list-style: none;
-}
-.produceList li {
-	background-color: #fff;
-}
-.produce-card {
-	width: 200px;
-}
-.produce-card .card-title{
-	/*background-color: rgba(18, 13, 8, 0.5);*/
-	background-color: rgba(255,248,242, 0.9);
-	color: #120d08 ;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	margin: 0 auto;
-	padding: 0.5rem 0;
-	width: 100%;
-	text-align: center;
-}
+/*.produceList{*/
+	/*list-style: none;*/
+	/*padding: 0;*/
+/*}*/
+/*.produceList li {*/
+	/*background-color: #fff;*/
+	/*display: block;*/
+	/*float: left;*/
+/*}*/
+/*.produce-card {*/
+	/*width: 200px;*/
+/*}*/
+/*.produce-card .card-title{*/
+	/*!*background-color: rgba(18, 13, 8, 0.5);*!*/
+	/*background-color: rgba(255,248,242, 0.9);*/
+	/*color: #120d08 ;*/
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+	/*margin: 0 auto;*/
+	/*padding: 0.5rem 0;*/
+	/*width: 100%;*/
+	/*text-align: center;*/
+/*}*/
 .selected{
 	border: 3px solid blue;
 }

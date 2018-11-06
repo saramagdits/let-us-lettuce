@@ -15,16 +15,14 @@ class UI {
 		let content = '';
 		produce.produce.forEach(produceItem => {
 			// content += `<li><a href='#' class='produce-link' data-name='${produceItem}'>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}-sm.jpg'></a></li>`;
-			content += `<li>
-										<a href='#' class='produce-link' data-name='${produceItem}'>
-											<div class='card produce-card bg-dark text-white'>
-												<img class='card-img' src='images/${produceItem.replace(/\s/g, '')}.jpg' alt='${produceItem}'>
-													<div class='card-img-overlay'>
-														<h5 class='card-title'>${produceItem}</h5>
-													</div>
-											</div>
-										</a>
-									</li>`;
+			content += `<div class='card-deck'>
+										<div class='card produce-card bg-dark text-white' data-name='${produceItem}'>
+											<img class='card-img' src='images/${produceItem.replace(/\s/g, '')}.jpg' alt='${produceItem}'>
+												<div class='card-img-overlay'>
+													<h5 class='card-title'>${produceItem}</h5>
+												</div>
+										</div>
+									</div>`;
 		});
 		this.produceList.innerHTML = content;
 		// console.log(produce);
