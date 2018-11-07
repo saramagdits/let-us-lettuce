@@ -92,6 +92,7 @@ html, body {
 	padding: 1rem;
 	border: none;
 }
+
 .produce-card .card-title{
 	background-color: rgba(255,248,242, 0.9);
 	color: #120d08;
@@ -103,6 +104,18 @@ html, body {
 	width: 100%;
 	text-align: center;
 	text-transform: capitalize;
+	transition-property: padding;
+	-webkit-transition-duration: 0.15s;
+	-moz-transition-duration: 0.15s;
+	-ms-transition-duration: 0.15s;
+	-o-transition-duration: 0.15s;
+	transition-duration: 0.15s;
+}
+.card-img-overlay:hover{
+	cursor: pointer;
+}
+.card-img-overlay:hover .card-title{
+	padding: 1rem 0;
 }
 
 .card-img-overlay {
