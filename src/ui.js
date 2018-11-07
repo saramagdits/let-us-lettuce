@@ -14,20 +14,19 @@ class UI {
 	displayProduce(produce) {
 		let content = '';
 		produce.produce.forEach(produceItem => {
-			content += `<li><a href='#' class='produce-link' data-name='${produceItem}'>${produceItem}<img src='images/${produceItem.replace(/\s/g, '')}-sm.jpg'></a></li>`;
+		content += `
+										<div class='card produce-card' data-name='${produceItem}'>
+											<img class='card-img' src='images/${produceItem.replace(/\s/g, '')}.jpg' alt='${produceItem}'>
+												<div class='card-img-overlay'>
+													<h5 class='card-title'>${produceItem}</h5>
+												</div>
+										</div>
+									`;
 		});
 		this.produceList.innerHTML = content;
-		// console.log(produce);
 	}
 
-	//  Give the produce styling to signify it has been selected
-	// addSelectedStyling (produce) {
-	// 	produce.classList.add('selected');
-	// }
-	//  Remove the selected styling for one or more produce
-	// removeSelectedStyling (produce) {
-	// 	produce.classList.remove('selected');
-	// }
+	// Toggles the 'selected' styling for the element
 	toggleSelected(produce) {
 		produce.classList.toggle('selected');
 	}

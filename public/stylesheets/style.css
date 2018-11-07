@@ -48,22 +48,106 @@ html, body {
 	text-decoration: none;
 }
 .container{
-	max-width: 960px;
+	max-width: 1200px;
 }
 /*TODO optimize this image, it's huge*/
 .landing-container{
 	background-image: url('../images/landing.jpg');
 	background-size: cover;
 }
-.produceList li {
+.jumbotron {
+	padding-left:1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+}
+/*.produceList{*/
+	/*list-style: none;*/
+	/*padding: 0;*/
+/*}*/
+/*.produceList li {*/
+	/*background-color: #fff;*/
+	/*display: block;*/
+	/*float: left;*/
+/*}*/
+/*.produce-card {*/
+	/*width: 200px;*/
+/*}*/
+#produce-container{
 	background-color: #fff;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+.produceList{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+/*Do something like this for mobile version*/
+/*.produce-card{*/
+	/*width:100px;*/
+/*}*/
+.produce-card{
+	width: 14rem;
+	padding: 1rem;
+	border: none;
+}
+
+.produce-card .card-title{
+	background-color: rgba(255,248,242, 0.9);
+	color: #120d08;
+	position: absolute;
+	bottom: -0.375rem;
+	left: 0;
+	margin: 0 auto;
+	padding: 0.5rem 0;
+	width: 100%;
+	text-align: center;
+	text-transform: capitalize;
+	transition-property: padding;
+	-webkit-transition-duration: 0.15s;
+	-moz-transition-duration: 0.15s;
+	-ms-transition-duration: 0.15s;
+	-o-transition-duration: 0.15s;
+	transition-duration: 0.15s;
+}
+.card-img-overlay:hover{
+	cursor: pointer;
+}
+.card-img-overlay:hover .card-title{
+	padding: 1rem 0;
+}
+
+.card-img-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 10%;
+	left: 0;
+	/* padding: 1.25rem; */
+	width: 12rem;
+	margin: 0 auto;
 }
 .selected{
 	border: 3px solid blue;
+}
+.alert{
+	margin: 1rem;
+}
+#searchRecipesBtn{
+	/*margin-left: 1rem;*/
+}
+#recipe-container{
+	background-color: #fff;
+	padding: 1rem;
+	margin-bottom: 1rem;
 }
 .recipe-card{
 	width: 18rem;
 }
 .recipe-card .badge{
 	margin-right: 0.25rem;
+}
+footer{
+	background-color: #fff;
 }
