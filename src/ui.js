@@ -69,10 +69,15 @@ class UI {
 		}
 		else if (type === 'error') {
 			let content = document.createElement('div');
-			content.classList.add('alert', 'alert-danger');
+			content.classList.add('alert', 'alert-danger', 'alert-fixed');
 			content.role = 'alert';
 			content.innerHTML = alertMsg;
 			this.recipeContainer.insertBefore(content, this.recipeList);
+			// content.classList.add('fade-out');
+			setTimeout(() => {content.classList.add('fade-out')}, 5000).then(setTimeout(() => {
+				content.remove()
+			}, 6000));
+
 		}
 	}
 
