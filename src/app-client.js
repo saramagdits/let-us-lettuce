@@ -38,7 +38,6 @@ function produceClicked(e) {
 	// Check if the item clicked was a produce item
 	if (e.target.parentNode.classList.contains('produce-card') || e.target.parentNode.parentNode.classList.contains('produce-card')) {
 		produce = e.target.closest('.produce-card').dataset.name;
-		console.log(produce);
 		if (produceSelector.checkProduce(produce)) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(produce);
