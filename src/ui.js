@@ -59,6 +59,7 @@ class UI {
 
 	// Display a success or error alert, with custom text
 	showAlert(alertMsg, type) {
+		this.clearAlerts();
 		if (type === 'success') {
 			let content = document.createElement('div');
 			content.classList.add('alert', 'alert-success');
