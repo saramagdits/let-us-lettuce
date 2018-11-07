@@ -40,10 +40,10 @@
 			<a class='btn btn-outline-secondary' href='#'>Coming soon</a>
 		</div>
 	</div>
-	<div class="jumbotron jumbotron-fluid container">
-		<div class="container">
-			<h1 class="display-4">Here is what's in season for you</h1>
-			<p class="lead">Select up to 4 veggies to search recipes</p>
+	<div class='jumbotron jumbotron-fluid container'>
+		<div class='container'>
+			<h1 class='display-4'>Here is what's in season for you</h1>
+			<p class='lead'>Select up to 4 veggies to search recipes</p>
 		</div>
 	</div>
 	<div id='produce-container' class='container'>
@@ -52,25 +52,138 @@
 		</div>
 
 	</div>
-	<div class="jumbotron jumbotron-fluid container">
-		<div class="container">
-			<h1 class="display-4">Here's some fresh recipes</h1>
-			<p class="lead">Select up to 4 veggies to search recipes</p>
+	<div class='jumbotron jumbotron-fluid container'>
+		<div class='container'>
+			<h1 class='display-4'>Here's some fresh recipes</h1>
+			<p class='lead'>Select up to 4 veggies to search recipes</p>
 			<button type='button' id='searchRecipesBtn' class='btn btn-primary'>Search</button>
 			<button type='button' id='clearSelectedProduceBtn' class='btn btn-secondary'>Clear</button>
 		</div>
 	</div>
 	<div id='recipe-container' class='container'>
-		<ul class='recipeList'></ul>
+		<div class='recipeList'>
+			<!--START SAMPLE RECIPE CARDS-->
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/58a/58a93a8d0c48110ac1c59e3b6e82a9ef.jpg'
+						 alt='Tomato Gravy'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Gravy</h5>
+					<p class='card-text'><span class='badge badge-info'>Peanut-Free</span><span class='badge badge-info'>Tree-Nut-Free</span><span
+							class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://www.seriouseats.com/recipes/2013/01/sauced-tomato-gravy-recipe.html' class='btn btn-primary'>Serious
+						Eats</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/50c/50caff46d0a8eeab3b24a40fd3d5038f.jpg'
+						 alt='Tomato Pesto'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Pesto</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://notwithoutsalt.com/tomato-pesto/' class='btn btn-primary'>Not Without Salt</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/310/3100907c3dabf20e2495c434658de0cf.jpg'
+						 alt='Tomato Daiquiri'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Daiquiri</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegan</span><span
+							class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Tree-Nut-Free</span><span class='badge badge-info'>Alcohol-Cocktail</span></p>
+					<a href='http://www.jeffreymorgenthaler.com/2004/tomato-daquiri/' class='btn btn-primary'>Jeffrey
+						Morgenthaler</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/ab1/ab1dbb063af01a88735e3348e80083ed.jpg'
+						 alt='Tomato Marmalade'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Marmalade</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegan</span><span
+							class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Tree-Nut-Free</span></p>
+					<a href='http://www.marthastewart.com/315286/tomato-marmalade' class='btn btn-primary'>Martha Stewart</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/e16/e161ad7b861b9cb51a3c823c82fa1994.jpg'
+						 alt='Tomato Sandwich'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Sandwich</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Tree-Nut-Free</span><span class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='https://food52.com/recipes/6006-tomato-sandwich' class='btn btn-primary'>Food52</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/905/9050fcbf37c706da7eac89280b22b778.jpg'
+						 alt='Curried Green Tomato Pickle'>
+				<div class='card-body'>
+					<h5 class='card-title'>Curried Green Tomato Pickle</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegan</span><span
+							class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Tree-Nut-Free</span><span class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://ruhlman.com/2010/10/pickled-green-tomato-recipe/' class='btn btn-primary'>Ruhlman</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/9c1/9c1fff55ce4e98eee16622d9af6266d4.jpg'
+						 alt='Tomato Risotto'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Risotto</h5>
+					<p class='card-text'><span class='badge badge-info'>Sugar-Conscious</span><span class='badge badge-info'>Vegetarian</span><span
+							class='badge badge-info'>Peanut-Free</span><span class='badge badge-info'>Tree-Nut-Free</span></p>
+					<a href='http://www.bonappetit.com/recipe/tomato-risotto' class='btn btn-primary'>Bon Appetit</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/6d1/6d1ff203fe58b30da368fec0578547ed.jpg'
+						 alt='Basic Tomato Sauce'>
+				<div class='card-body'>
+					<h5 class='card-title'>Basic Tomato Sauce</h5>
+					<p class='card-text'><span class='badge badge-info'>Vegan</span><span
+							class='badge badge-info'>Vegetarian</span><span class='badge badge-info'>Peanut-Free</span><span
+							class='badge badge-info'>Tree-Nut-Free</span><span class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://norecipes.com/recipe/best-tomato-sauce/' class='btn btn-primary'>No Recipes</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/9ba/9ba396cdcfdd303ca234cd255183451a.jpg'
+						 alt='Tomato Soup'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato Soup</h5>
+					<p class='card-text'><span class='badge badge-info'>Peanut-Free</span><span class='badge badge-info'>Tree-Nut-Free</span><span
+							class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://www.bbcgoodfood.com/recipes/2075/' class='btn btn-primary'>BBC Good Food</a>
+				</div>
+			</div>
+			<div class='card recipe-card'>
+				<img class='card-img-top' src='https://www.edamam.com/web-img/c09/c09a780cb0d1d7de06f3b9f6115af147.jpg'
+						 alt='Tomato And Avocado Sandwich'>
+				<div class='card-body'>
+					<h5 class='card-title'>Tomato And Avocado Sandwich</h5>
+					<p class='card-text'><span class='badge badge-info'>Sugar-Conscious</span><span class='badge badge-info'>Vegetarian</span><span
+							class='badge badge-info'>Peanut-Free</span><span class='badge badge-info'>Tree-Nut-Free</span><span
+							class='badge badge-info'>Alcohol-Free</span></p>
+					<a href='http://www.saveur.com/article/Recipes/Tomato-and-Avocado-Sandwich' class='btn btn-primary'>Saveur</a>
+				</div>
+			</div>
+			<!--END SAMPLE RECIPE CARDS-->
+		</div> <!-- div.recipeList-->
+
 	</div>
 </main>
 
 <footer class='container'>
-	<p>&copy; Company <script type="text/javascript">
-		document.write(new Date().getFullYear());
-	</script></p>
+	<p>&copy; Company
+		<script type='text/javascript'>
+			document.write(new Date().getFullYear());
+		</script>
+	</p>
 	<!-- Attribution for Edamam API usage -->
-	<div id="edamam-badge" data-color="white"></div>
+	<div id='edamam-badge' data-color='white'></div>
 </footer>
 <script src='javascripts/bundle.js'></script>
 </body>
