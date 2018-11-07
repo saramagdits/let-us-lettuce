@@ -36,20 +36,20 @@ function produceClicked(e) {
 	e.preventDefault();
 	let produce = '';
 	// Check if the item clicked was a produce item
-	if (e.target.classList.contains('produce-link')) {
-		produce = e.target.dataset.name;
-		// produceSelector.toggleProduce(produce);
+	if (e.target.parentNode.classList.contains('produce-card') || e.target.parentNode.parentNode.classList.contains('produce-card')) {
+		produce = e.target.closest('.produce-card').dataset.name;
+		console.log(produce);
 		if (produceSelector.checkProduce(produce)) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(produce);
-			ui.toggleSelected(e.target);
+			ui.toggleSelected(e.target.closest('.produce-card'));
 		} else {
 			if (produceSelector.checkProduceLength() === 4) {
 				ui.showAlert('Only 4 vegetables may be selected', 'error');
 			} else {
 				// Add the produce to the selected produce array
 				produceSelector.selectProduce(produce);
-				ui.toggleSelected(e.target);
+				ui.toggleSelected(e.target.closest('.produce-card'));
 			}
 		}
 	}
