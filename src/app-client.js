@@ -42,14 +42,14 @@ function produceClicked(e) {
 		if (produceSelector.checkProduce(produce)) {
 			// Remove the produce from the selected produce array
 			produceSelector.deselectProduce(produce);
-			ui.toggleSelected(e.target.closest('.produce-card'));
+			ui.toggleSelected(e.target.closest('.produce-card').firstElementChild);
 		} else {
 			if (produceSelector.checkProduceLength() === 4) {
 				ui.showAlert('Only 4 vegetables may be selected', 'error');
 			} else {
 				// Add the produce to the selected produce array
 				produceSelector.selectProduce(produce);
-				ui.toggleSelected(e.target.closest('.produce-card'));
+				ui.toggleSelected(e.target.closest('.produce-card').firstElementChild);
 			}
 		}
 	}
