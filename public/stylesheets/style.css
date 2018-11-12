@@ -78,7 +78,7 @@ html, body {
 	margin-bottom: 1rem;
 	padding: 1rem;
 }
-.produceList{
+.produceList, .recipeList{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -88,7 +88,7 @@ html, body {
 /*.produce-card{*/
 	/*width:100px;*/
 /*}*/
-.produce-card{
+.produce-card, .recipe-card{
 	width: 14rem;
 	padding: 1rem;
 	border: none;
@@ -163,6 +163,9 @@ html, body {
 }
 .recipe-card .badge{
 	margin-right: 0.25rem;
+}
+.recipe-card .card-body{
+	background-color: #fff8f2;
 }
 footer{
 	background-color: #fff;
