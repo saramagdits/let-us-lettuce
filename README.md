@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-In order to install this program, you will need to install node.js and MongoDB
+In order to install this program, you will need to install [node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/)
 
 ### Installing and Deploying
 
