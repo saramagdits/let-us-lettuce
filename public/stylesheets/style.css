@@ -155,6 +155,11 @@ html, body {
 	transition-property: opacity;
 	transition-duration: 1s;
 }
+.alert-danger{
+	background-color: #fad4cb;
+	color: #9f1e21;
+	border-color: #f8c2b8;
+}
 .fade-out{
 	opacity: 0;
 }
