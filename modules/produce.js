@@ -1,10 +1,3 @@
-// Receive current month
-// Request relevant produce from Produce API
-// Receive current produce
-// Send current produce to recipe controller
-// Send current produce to UI controller
-
-// TODO maybe try moving the produceSchema and SeasonalProduce into the class Produce. or google how to use mongoose model inside of a class
 const mongoose = require('mongoose');
 const produceSchema = new mongoose.Schema({month: String, monthString: String, produce: [String]});
 const SeasonalProduce = mongoose.model('SeasonalProduce', produceSchema);
@@ -99,7 +92,6 @@ class Produce {
 	// }
 	queryProduce(month){
 		// This works, needs to be handled asynchronously by produce route
-		// TODO add error handling
 		return SeasonalProduce.find({month: month}, (err, docs) => {return docs});
 	}
 }

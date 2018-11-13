@@ -1,4 +1,4 @@
-/*TODO make alert color scheme*/
+/*TODO fix navbar height on mobile sizes*/
 /*TODO mobile media queriess*/
 /*
  * Color Scheme
@@ -33,6 +33,12 @@
 html, body {
 	background-color: #fff8f2;
 }
+body{
+	margin-bottom: 2rem;
+}
+main{
+	margin-top: 4.5rem;
+}
 /*
  * Custom translucent site header
  */
@@ -41,25 +47,27 @@ html, body {
 	-webkit-backdrop-filter: saturate(180%) blur(20px);
 	backdrop-filter: saturate(180%) blur(20px);
 }
-.site-header a {
+.nav-link {
 	color: #c2aa96;
 	transition: ease-in-out color .15s;
 }
-.site-header a:hover {
+.nav-link:hover {
 	color: #e9dcd1;
 	text-decoration: none;
 }
+.navbar-toggler {
+	color: rgba(255,255,255,.5);
+	border-color: rgba(255,255,255,.1);
+}
+
 #nav-title{
 	font-family: 'Just Another Hand', cursive;
-	font-size: 2rem;
-	height: 0;
-	margin-top: -8px;
 	color: #ffa94d;
 }
 .container{
 	max-width: 1200px;
 }
-/*TODO optimize this image, it's huge*/
+
 .landing-container{
 	background-image: url('../images/landing.jpg');
 	background-size: cover;

@@ -30,7 +30,6 @@ function getAndDisplayProduce() {
 			.then(produceResults => {ui.displayProduce(produceResults)});
 }
 
-// TODO maybe combine selectProduce and deselectProduce into toggleProduce.
 // Handles the produce target being clicked
 function produceClicked(e) {
 	e.preventDefault();
@@ -77,8 +76,6 @@ function searchAndDisplayRecipes(e) {
 	}
 }
 
-// TODO handle case where no relevant recipes are returned
-// TODO this should clear any previous recipes?
 // Clears the selection styling for selected produce, as well as removing them from the selected produce array
 function clearSelectedProduce(e) {
 	e.preventDefault();

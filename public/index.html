@@ -4,21 +4,49 @@
 	<meta charset='UTF-8'>
 	<title>Let Us Lettuce - Get recipes based on season!</title>
 	<link rel='shortcut icon' type='image/png' href='./favicon'/>
-	<link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet'>
 	<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'
 				integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
-	<!--<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-gJWVjz180MvwCrGGkC4xE5FjhWkTxHIR/+GgT8j2B3KKMgh6waEjPgzzh7lL7JZT" crossorigin="anonymous">-->
 	<link rel='stylesheet' href='stylesheets/style.css'>
 	<script src='https://developer.edamam.com/attribution/badge.js'></script>
 </head>
 <body>
 <!--TODO hamburger icon-->
-<nav class='site-header sticky-top py-1'>
-	<div class='container d-flex flex-column flex-md-row justify-content-between'>
-		<a class='py-2' id='nav-title' href='#'>Let Us Lettuce</a>
-		<a class='py-2 d-none d-md-inline-block' href='#'>Home</a>
-		<a class='py-2 d-none d-md-inline-block' href='#produce-jumbotron'>Produce</a>
-		<a class='py-2 d-none d-md-inline-block' href='#recipe-jumbotron'>Recipes</a>
+<!--<nav class='site-header sticky-top py-1 navbar navbar-expand-sm'>-->
+<!--<div class='container d-flex flex-column flex-md-row justify-content-between'>-->
+<!--<a class='py-2 navbar-brand' id='nav-title' href='#'>Let Us Lettuce</a>-->
+<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--<span class="navbar-toggler-icon"></span>-->
+<!--</button>-->
+<!--<div class='collapse navbar-collapse'>-->
+<!--<div class='navbar-nav'>-->
+<!--<a class='py-2 d-none d-md-inline-block nav-link nav-item' href='#'>Home</a>-->
+<!--<a class='py-2 d-none d-md-inline-block nav-link nav-item' href='#produce-jumbotron'>Produce</a>-->
+<!--<a class='py-2 d-none d-md-inline-block nav-link nav-item' href='#recipe-jumbotron'>Recipes</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</nav>-->
+<nav class='navbar navbar-expand-sm navbar-dark fixed-top site-header'>
+	<div class='container d-flex flex-row flex-md-row justify-content-between'>
+		<a class='navbar-brand' href='#' id='nav-title'>Let Us Lettuce</a>
+		<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar'
+						aria-expanded='false' aria-label='Toggle navigation'>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+		<div class='collapse navbar-collapse' id='navbar'>
+			<ul class='navbar-nav mr-auto'>
+				<li class='nav-item'>
+					<a class='nav-link' href='#'>Home</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#produce-jumbotron'>Produce</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#recipe-jumbotron'>Recipes</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>
 <main role='main' id='main'>
@@ -175,6 +203,12 @@
 	<!-- Attribution for Edamam API usage -->
 	<div id='edamam-badge' data-color='white'></div>
 </footer>
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'
+				integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+				crossorigin='anonymous'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'
+				integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy'
+				crossorigin='anonymous'></script>
 <script src='javascripts/bundle.js'></script>
 </body>
 </html>
