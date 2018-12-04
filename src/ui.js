@@ -42,9 +42,11 @@ class UI {
 		let content = '';
 		recipes.hits.forEach(recipe => {
 			let badges = '';
-			badges += recipe.recipe.healthLabels.map(label => {
-				return `<span class='badge badge-info'>${label}</span>`
-			}).reduce((a, b) => a + b);
+			if(recipe.recipe.healthLabels > 0) {
+				badges += recipe.recipe.healthLabels.map(label => {
+					return `<span class='badge badge-info'>${label}</span>`
+				}).reduce((a, b) => a + b);
+			}
 			content += `<div class='card recipe-card'>
   									<img class='card-img-top' src='${recipe.recipe.image}' alt='${recipe.recipe.label}'>
 										<div class='card-body'>
