@@ -29,12 +29,12 @@ npm install
 3. Create a config.js file in the root with the following. An app id and API key from the [Edamam API](https://developer.edamam.com/) are required to get recipe results.
 ```
 module.exports = {
-    port: process.env.PORT || {3000, OR YOUR PORT},
+    port: process.env.PORT || <3000, OR YOUR PORT>,
         db: {
-            uri: 'mongodb://localhost:{3000 OR YOUR PORT}/',
+            uri: 'mongodb://localhost:<27017 OR YOUR PORT>/',
         },
-        apiAppId: {YOUR API APP ID},
-        apiKey: {YOUR API KEY}
+        apiAppId: <YOUR API APP ID>,
+        apiKey: <YOUR API KEY>
     };
 ```
 
