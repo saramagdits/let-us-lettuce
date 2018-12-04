@@ -9,7 +9,6 @@ const apiKey = config.apiKey;
 router.get('/', (req, res) => {
 	const ingredients = req.query.ing;
 	request(`https://api.edamam.com/search?q=${ingredients}&app_id=${apiAppId}&app_key=${apiKey}`, function (error, response, body) {
-		console.log('statusCode for edamam request:', response && response.statusCode); // Print the response status code if a response was received
 		if (error === null && response.statusCode === 200){
 			res.send(body);
 		} else if (error) {
