@@ -1,7 +1,7 @@
 {
-  "name": "seasonal-recipes",
+  "name": "let-us-lettuce",
   "version": "1.0.0",
-  "description": "seasonal-recipes",
+  "description": "Find out what veggies are in season, as well as tasty recipes that use them",
   "main": "app-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
