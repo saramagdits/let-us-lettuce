@@ -10,6 +10,7 @@ const config = require('./config.js');
 const app = express();
 const port = config.port;
 const mongoose = require('mongoose');
+const Produce = require('./modules/produce');
 
 // =======================
 // Configuration
@@ -42,8 +43,8 @@ app.use('/produce', produce);
 // Populate Database
 // =======================
 // Uncomment and run once when needed
-// const produce = new Produce;
-// produce.populateDB();
+const produceDB = new Produce;
+produceDB.populateDB();
 
 // =======================
 // Listener for port 3000
