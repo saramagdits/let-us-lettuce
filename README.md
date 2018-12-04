@@ -41,7 +41,7 @@ module.exports = {
 4. Create a config.js file in the /src/ folder with the following. The url may be your localhost address, or another domain.
 ```
 module.exports = {
-	url: 'http://localhost:3000'
+	url: '<LOCALHOST URL OR EQUIVALENT>'
 };
 ```
 
