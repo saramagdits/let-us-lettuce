@@ -5,12 +5,14 @@
 // Send current produce to UI controller
 
 class Produce {
+
 	constructor() {
 		this.print = 'Hello from the produce class';
+		this.config = require('./config.js');
 	}
 
 	queryProduce (month) {
-		return fetch(`http://localhost:3000/produce?month=${month}`, {method: 'GET'})
+		return fetch(`${this.config.url}/produce?month=${month}`, {method: 'GET'})
 				.then(res => {return res.json()})
 				.then(data => {return data})
 				.catch(err => console.log(err));
