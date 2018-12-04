@@ -25,9 +25,8 @@ git clone https://github.com/saramagdits/seasonal-recipes.git
 ```
 npm install
 ```
-3.
 
-4. Create a config.js file in the root with the following. An app id and API key from the [Edamam API](https://developer.edamam.com/) are required to get recipe results.
+3. Create a config.js file in the root with the following. An app id and API key from the [Edamam API](https://developer.edamam.com/) are required to get recipe results.
 ```
 module.exports = {
     port: process.env.PORT || {3000, OR YOUR PORT},
@@ -37,6 +36,13 @@ module.exports = {
         apiAppId: {YOUR API APP ID},
         apiKey: {YOUR API KEY}
     };
+```
+
+4. Create a config.js file in the /src/ folder with the following. The url may be your localhost address, or another domain.
+```
+module.exports = {
+	url: 'http://localhost:3000'
+};
 ```
 
 5. Compile with webpack
