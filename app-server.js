@@ -21,7 +21,7 @@ app.use(express.static('public'));
 // =======================
 // Database Connection
 // =======================
-mongoose.connect('mongodb://localhost/test_database');
+mongoose.connect('mongodb://localhost/produce');
 
 // =======================
 // Routes
@@ -43,8 +43,8 @@ app.use('/produce', produce);
 // Populate Database
 // =======================
 // Uncomment and run once when needed
-const produceDB = new Produce;
-produceDB.populateDB();
+// const produceDB = new Produce;
+// produceDB.populateDB();
 
 // =======================
 // Listener for port 3000
