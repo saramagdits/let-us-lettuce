@@ -42,7 +42,7 @@ class UI {
 		let content = '';
 		recipes.hits.forEach(recipe => {
 			let badges = '';
-			if(recipe.recipe.healthLabels > 0) {
+			if(recipe.recipe.healthLabels.length > 0) {
 				badges += recipe.recipe.healthLabels.map(label => {
 					return `<span class='badge badge-info'>${label}</span>`
 				}).reduce((a, b) => a + b);
