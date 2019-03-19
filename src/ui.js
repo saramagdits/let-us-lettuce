@@ -39,7 +39,12 @@ class UI {
 
 	// Receive recipe results and display them on the page as cards
 	displayRecipes(recipes) {
-		let content = '';
+		let content = `	<div id='recipe-jumbotron' class='jumbotron jumbotron-fluid container'>
+		<div class='container'>
+			<h1 class='display-4'>Here's some fresh recipes!</h1>
+			<p class='lead'>Press Clear to start over.</p>
+		</div>
+	</div>`;
 		recipes.hits.forEach(recipe => {
 			let badges = '';
 			if(recipe.recipe.healthLabels.length > 0) {
