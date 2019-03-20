@@ -76,7 +76,8 @@ Try selecting up to 4 vegetables and clicking 'search' to get recipes that make 
 ## Built With
 
 * [Node.js](https://nodejs.org/en/) - Used for the backend to serve files, as well as serve as an endpoint for produce and recipe requests.
-* [Express](https://expressjs.com/) - Web application framework for Node.js
-* [MongoDB](https://www.mongodb.com/) - NoSQL database used to build the Produce API
-* [Mongoose](https://mongoosejs.com/) - Object modeling for MongoDB. Used to build the Produce API
-* [Bootstrap](http://getbootstrap.com/) - CSS framework for simplified responsive design
+* [Express](https://expressjs.com/) - Web application framework for Node.js.
+* [MongoDB](https://www.mongodb.com/) - NoSQL database used to build the Produce API.
+* [Mongoose](https://mongoosejs.com/) - Object modeling for MongoDB. Used to build the Produce API.
+* [Bootstrap](http://getbootstrap.com/) - CSS framework for simplified responsive design.
+* [Edamam Recipe API](https://www.edamam.com//) - Provides a recipe search endpoint with access to over 1.5 million recipes.
