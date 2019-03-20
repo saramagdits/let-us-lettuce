@@ -1,4 +1,4 @@
-# Seasonal Recipes
+# Let Us Lettuce
 
 A simple app with the objective of showing the user what produce is in season for them, as well as pairing them with recipes which take advantage of this seasonality.
 
@@ -14,10 +14,10 @@ In order to install this program, you will need to install [node.js](https://nod
 
 Follow these steps to get a dev environment running on your local machine
 
-1. Clone the seasonal-recipes repository to your local machine
+1. Clone the let-us-lettuce repository to your local machine
 
 ```
-git clone https://github.com/saramagdits/seasonal-recipes.git
+git clone https://github.com/saramagdits/let-us-lettuce.git
 ```
 
 2. Install dependencies from the package.json
