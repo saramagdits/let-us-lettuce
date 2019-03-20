@@ -8,6 +8,7 @@
 const express = require('express');
 const config = require('./config.js');
 const app = express();
+const cors = require('cors');
 const port = config.port;
 const mongoose = require('mongoose');
 const Produce = require('./modules/produce');
@@ -16,6 +17,7 @@ const Produce = require('./modules/produce');
 // Configuration
 // =======================
 app.set('view engine', 'ejs');
+app.use(cors());
 app.use(express.static('public'));
 
 // =======================
